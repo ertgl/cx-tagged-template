@@ -475,7 +475,7 @@ Stack: []
 Stack: ["nice"]
 Stack: ["nice", false]
 Operation: test
-Stack: [],
+Stack: []
 Stack: ["nice--better"]
 Stack: ["nice--better", true]
 Operation: test,
