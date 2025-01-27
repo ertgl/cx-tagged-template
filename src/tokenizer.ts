@@ -34,8 +34,8 @@ export function tokenize(
     {
       emit(
         createWhitespaceToken(
-          index
-          , character,
+          index,
+          character,
         ),
       );
     }
