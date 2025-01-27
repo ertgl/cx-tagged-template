@@ -1,0 +1,17 @@
+{
+  "name": "cx-tagged-template-e2e-conformance-tree-shaking",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf output",
+    "test": "node --test --test-reporter=spec ./test/*.{spec,test}.{cjs,js,mjs}"
+  },
+  "devDependencies": {
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack": "^5.97.1"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [],
+  "sideEffects": []
+}

@@ -1,0 +1,195 @@
+{
+  "name": "cx-tagged-template",
+  "description": "Class-name expressions in the style of concatenative programming, powered by tagged templates.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ertgl/cx-tagged-template.git"
+  },
+  "scripts": {
+    "build": "yarn build:clean && yarn build::cjs && yarn build::esm && yarn build::types",
+    "build::cjs": "babel src --config-file ./babel.config.cjs.cjs --extensions '.ts' --ignore '**/*.d.ts' --out-dir dist/cjs --out-file-extension '.cjs'",
+    "build::esm": "babel src --config-file ./babel.config.esm.cjs --extensions '.ts' --ignore '**/*.d.ts' --out-dir dist/esm --out-file-extension '.mjs'",
+    "build::types": "tsc --project ./tsconfig.output.types.json",
+    "build:clean": "rimraf dist",
+    "changeset:add": "changeset",
+    "changeset:tag": "changeset tag",
+    "changeset:version": "changeset version",
+    "check": "yarn lint && yarn test",
+    "clean": "yarn build:clean",
+    "commitlint": "commitlint --config ./commitlint.config.mjs",
+    "commitlint:lint::edit": "yarn commitlint --edit",
+    "commitlint:lint::last": "yarn commitlint --last --verbose",
+    "e2e:clean": "yarn e2e:yarn clean",
+    "e2e:prepare": "yarn e2e:yarn prepare",
+    "e2e:test": "yarn e2e:yarn test",
+    "e2e:yarn": "yarn --cwd ./e2e",
+    "eslint:lint": "eslint --config ./eslint.config.mjs",
+    "eslint:lint::fix": "yarn eslint:lint --fix",
+    "format": "yarn lint::fix",
+    "git:push::tags": "git push --follow-tags",
+    "husky:prepare": "husky",
+    "lint": "yarn eslint:lint",
+    "lint::fix": "yarn eslint:lint::fix",
+    "prepare": "yarn husky:prepare",
+    "release": "yarn changeset:tag && yarn git:push::tags",
+    "test": "node --max-old-space-size=4096 --test --test-reporter=spec ./test/*.{spec,test}.{cjs,js,mjs}",
+    "version": "yarn changeset:version"
+  },
+  "packageManager": "yarn@4.6.0",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-typescript": "^7.26.0",
+    "@changesets/cli": "^2.27.12",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@cspell/dict-bash": "^4.2.0",
+    "@cspell/dict-css": "^4.0.17",
+    "@cspell/dict-en-common-misspellings": "^2.0.9",
+    "@cspell/dict-en-gb": "^4.1.54",
+    "@cspell/dict-en_us": "^4.3.30",
+    "@cspell/dict-filetypes": "^3.0.10",
+    "@cspell/dict-git": "^3.0.4",
+    "@cspell/dict-html": "^4.0.11",
+    "@cspell/dict-html-symbol-entities": "^4.0.3",
+    "@cspell/dict-markdown": "^2.0.9",
+    "@cspell/dict-node": "^5.0.6",
+    "@cspell/dict-npm": "^5.1.23",
+    "@cspell/dict-shell": "^1.1.0",
+    "@cspell/dict-typescript": "^3.2.0",
+    "@cspell/eslint-plugin": "^8.17.2",
+    "@eslint/js": "^9.19.0",
+    "@eslint/json": "^0.10.0",
+    "@eslint/markdown": "^6.2.2",
+    "@stylistic/eslint-plugin": "^2.13.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__preset-env": "^7.9.7",
+    "@types/node": "^22.10.10",
+    "babel-plugin-transform-import-source": "^1.0.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-perfectionist": "^4.7.0",
+    "eslint-plugin-yml": "^1.16.0",
+    "fast-glob": "^3.3.3",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./src/index.ts"
+    },
+    "./extensions": {
+      "types": "./dist/types/extensions/index.d.ts",
+      "import": "./dist/esm/extensions/index.mjs",
+      "require": "./dist/cjs/extensions/index.cjs",
+      "default": "./src/extensions/index.ts"
+    },
+    "./extensions/css-modules": {
+      "types": "./dist/types/extensions/css-modules/index.d.ts",
+      "import": "./dist/esm/extensions/css-modules/index.mjs",
+      "require": "./dist/cjs/extensions/css-modules/index.cjs",
+      "default": "./src/extensions/css-modules/index.ts"
+    },
+    "./extensions/css-modules/*": {
+      "types": "./dist/types/extensions/css-modules/*.d.ts",
+      "import": "./dist/esm/extensions/css-modules/*.mjs",
+      "require": "./dist/cjs/extensions/css-modules/*.cjs",
+      "default": "./src/extensions/css-modules/*.ts"
+    },
+    "./extensions/*": {
+      "types": "./dist/types/extensions/*.d.ts",
+      "import": "./dist/esm/extensions/*.mjs",
+      "require": "./dist/cjs/extensions/*.cjs",
+      "default": "./src/extensions/*.ts"
+    },
+    "./fragments": {
+      "types": "./dist/types/fragments/index.d.ts",
+      "import": "./dist/esm/fragments/index.mjs",
+      "require": "./dist/cjs/fragments/index.cjs",
+      "default": "./src/fragments/index.ts"
+    },
+    "./fragments/*": {
+      "types": "./dist/types/fragments/*.d.ts",
+      "import": "./dist/esm/fragments/*.mjs",
+      "require": "./dist/cjs/fragments/*.cjs",
+      "default": "./src/fragments/*.ts"
+    },
+    "./operators": {
+      "types": "./dist/types/operators/index.d.ts",
+      "import": "./dist/esm/operators/index.mjs",
+      "require": "./dist/cjs/operators/index.cjs",
+      "default": "./src/operators/index.ts"
+    },
+    "./operators/*": {
+      "types": "./dist/types/operators/*.d.ts",
+      "import": "./dist/esm/operators/*.mjs",
+      "require": "./dist/cjs/operators/*.cjs",
+      "default": "./src/operators/*.ts"
+    },
+    "./tokens": {
+      "types": "./dist/types/tokens/index.d.ts",
+      "import": "./dist/esm/tokens/index.mjs",
+      "require": "./dist/cjs/tokens/index.cjs",
+      "default": "./src/tokens/index.ts"
+    },
+    "./tokens/*": {
+      "types": "./dist/types/tokens/*.d.ts",
+      "import": "./dist/esm/tokens/*.mjs",
+      "require": "./dist/cjs/tokens/*.cjs",
+      "default": "./src/tokens/*.ts"
+    },
+    "./*.d.ts": {
+      "types": "./dist/types/*.d.ts",
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/cjs/*.cjs",
+      "default": "./src/*.d.ts"
+    },
+    "./*.js": {
+      "types": "./dist/types/*.d.ts",
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/cjs/*.cjs",
+      "default": "./src/*.ts"
+    },
+    "./*.ts": {
+      "types": "./dist/types/*.d.ts",
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/cjs/*.cjs",
+      "default": "./src/*.ts"
+    },
+    "./*/": {
+      "types": "./dist/types/*/index.d.ts",
+      "import": "./dist/esm/*/index.mjs",
+      "require": "./dist/cjs/*/index.cjs",
+      "default": "./src/*/index.ts"
+    },
+    "./*": {
+      "types": "./dist/types/*",
+      "import": "./dist/esm/*",
+      "require": "./dist/cjs/*",
+      "default": "./src/*"
+    }
+  },
+  "files": [
+    "./dist/",
+    "./src/",
+    "./LICENSE",
+    "./README.md",
+    "./package.json"
+  ]
+}

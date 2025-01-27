@@ -1,0 +1,29 @@
+{
+  "name": "cx-tagged-template-e2e",
+  "private": true,
+  "scripts": {
+    "clean": "yarn w:foreach::parallel run clean",
+    "prepare": "yarn w:foreach::parallel::topological run prepare",
+    "test": "yarn w:foreach::parallel::topological run test",
+    "w:foreach": "yarn workspaces foreach --all --exclude 'cx-tagged-template-e2e'",
+    "w:foreach::parallel": "yarn w:foreach --parallel",
+    "w:foreach::parallel::topological": "yarn w:foreach::parallel --topological-dev"
+  },
+  "devDependencies": {
+    "cx-tagged-template": "*",
+    "rimraf": "^6.0.1"
+  },
+  "resolutions": {
+    "cx-tagged-template": "portal:..",
+    "cx-tagged-template-e2e-app-react": "file:./apps/react",
+    "cx-tagged-template-e2e-conformance-tree-shaking": "file:./conformance/tree-shaking"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "files": [],
+  "workspaces": [
+    "./apps/*",
+    "./conformance/*"
+  ]
+}

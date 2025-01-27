@@ -1,0 +1,120 @@
+name: Setup CI
+description: Setup CI environment
+
+inputs:
+  build-cache-key:
+    description: 'Cache key for the build'
+    required: false
+    default: ''
+  cache-build:
+    description: 'Should cache the build'
+    required: false
+    default: 'true'
+  cache-node-modules:
+    description: 'Should cache node_modules'
+    required: false
+    default: 'true'
+  node-modules-cache-key:
+    description: 'Cache key for node_modules'
+    required: false
+    default: ''
+  restore-build-cache:
+    description: 'Should restore the build cache'
+    required: false
+    default: 'true'
+  restore-node-modules-cache:
+    description: 'Should restore the node_modules cache'
+    required: false
+    default: 'true'
+
+outputs:
+  final-build-cache-key:
+    description: 'The final build cache key'
+    value: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}
+  final-node-modules-cache-key:
+    description: 'The final node_modules cache key'
+    value: ${{ steps.determine-node-modules-cache-key.outputs.final-node-modules-cache-key }}
+
+runs:
+  using: composite
+  steps:
+    - name: Determine build cache key
+      id: determine-build-cache-key
+      shell: bash
+      env:
+        FINAL_BUILD_CACHE_KEY: ${{ inputs.build-cache-key || format('build-cache-{0}-{1}', runner.os, hashFiles('yarn.lock', 'dist/**/*')) }}
+      run: echo "final-build-cache-key=$(echo "$FINAL_BUILD_CACHE_KEY")" >> $GITHUB_OUTPUT
+
+    - name: Determine node_modules cache key
+      id: determine-node-modules-cache-key
+      shell: bash
+      env:
+        FINAL_NODE_MODULES_CACHE_KEY: ${{ inputs.node-modules-cache-key || format('node-modules-cache-{0}-{1}', runner.os, hashFiles('yarn.lock', 'e2e/yarn.lock')) }}
+      run: echo "final-node-modules-cache-key=$(echo "$FINAL_NODE_MODULES_CACHE_KEY")" >> $GITHUB_OUTPUT
+
+    - name: Setup ASTNode.js LTS
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Enable Corepack
+      shell: bash
+      run: corepack enable
+
+    - name: Restore build cache
+      id: restore-build-cache
+      if: ${{ inputs.restore-build-cache == 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        path: dist
+        key: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}
+
+    - name: Restore node_modules cache
+      id: restore-node-modules-cache
+      if: ${{ inputs.restore-node-modules-cache == 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          node_modules
+          e2e/node_modules
+        key: ${{ steps.determine-node-modules-cache-key.outputs.final-node-modules-cache-key }}
+
+    - name: Install dependencies
+      id: install-dependencies
+      if: ${{ steps.restore-build-cache.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: |
+        yarn install --immutable
+        yarn e2e:yarn install --immutable
+
+    - name: Cache node_modules
+      id: cache-node-modules
+      if: ${{ inputs.cache-node-modules == 'true' && steps.restore-node-modules-cache.outputs.cache-hit != 'true' && steps.install-dependencies.conclusion == 'success' }}
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          node_modules
+          e2e/node_modules
+        key: ${{ steps.determine-node-modules-cache-key.outputs.final-node-modules-cache-key }}
+
+    - name: Prepare
+      if: ${{ steps.restore-build-cache.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: |
+        yarn prepare
+        yarn e2e:prepare
+
+    - name: Build
+      id: build
+      if: steps.restore-build-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: yarn build
+
+    - name: Cache build
+      id: cache-build
+      if: ${{ inputs.cache-build == 'true' && steps.restore-build-cache.outputs.cache-hit != 'true' && steps.build.conclusion == 'success' }}
+      uses: actions/cache/save@v4
+      with:
+        path: dist
+        key: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}

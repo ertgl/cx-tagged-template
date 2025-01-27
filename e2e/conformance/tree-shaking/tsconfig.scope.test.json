@@ -1,0 +1,6 @@
+{
+  "extends": "../../../tsconfig.partial.base.json",
+  "include": [
+    "./test/**/*"
+  ]
+}

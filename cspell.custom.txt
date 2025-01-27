@@ -1,0 +1,8 @@
+# Brace style
+allman
+
+# JavaScript, TypeScript, JSX
+cjsx
+ctsx
+mjsx
+mtsx

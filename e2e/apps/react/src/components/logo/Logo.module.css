@@ -1,0 +1,33 @@
+.logo,
+.logo.logo--reversed {
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo {
+  display: block;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+  .logo.logo--reversed {
+    animation: logo-spin-reversed infinite 1s linear;
+  }
+}
+
+@keyframes logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-spin-reversed {
+  to {
+    transform: rotate(-360deg);
+  }
+}

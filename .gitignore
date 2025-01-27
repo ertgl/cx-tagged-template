@@ -1,0 +1,25 @@
+# Distribution
+dist/
+
+# Environment-specific
+.env
+.env.*
+
+# Husky artifacts
+.husky/_/
+
+# Log files
+*.log
+
+# Misc
+.DS_Store
+
+# Package manager artifacts
+.yarn/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# User-specific
+/.local/
