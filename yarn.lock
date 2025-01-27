@@ -2001,10 +2001,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cspell/dict-npm@npm:^5.1.22, @cspell/dict-npm@npm:^5.1.23":
+"@cspell/dict-npm@npm:^5.1.22":
   version: 5.1.23
   resolution: "@cspell/dict-npm@npm:5.1.23"
   checksum: 10c0/5357433bf85e929edf42e949a74c1b5a54b461d3d9532eb6fb52cf6192a7fab06170ee29256592d69db6de750c66297cc59490cc8262d6f02e60524f056814a5
+  languageName: node
+  linkType: hard
+
+"@cspell/dict-npm@npm:^5.1.24":
+  version: 5.1.24
+  resolution: "@cspell/dict-npm@npm:5.1.24"
+  checksum: 10c0/47f602355ecb940b4584403b9ca8504a21faeec6e0672e81eca5d14b82331829d7edee7fd054893667ba128b51e01b6d85915eb49afc26e102c11ecd9ef2c7f7
   languageName: node
   linkType: hard
 
@@ -3380,7 +3387,7 @@ __metadata:
     "@cspell/dict-html-symbol-entities": "npm:^4.0.3"
     "@cspell/dict-markdown": "npm:^2.0.9"
     "@cspell/dict-node": "npm:^5.0.6"
-    "@cspell/dict-npm": "npm:^5.1.23"
+    "@cspell/dict-npm": "npm:^5.1.24"
     "@cspell/dict-shell": "npm:^1.1.0"
     "@cspell/dict-typescript": "npm:^3.2.0"
     "@cspell/eslint-plugin": "npm:^8.17.2"
