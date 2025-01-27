@@ -57,7 +57,7 @@
     "@cspell/dict-html-symbol-entities": "^4.0.3",
     "@cspell/dict-markdown": "^2.0.9",
     "@cspell/dict-node": "^5.0.6",
-    "@cspell/dict-npm": "^5.1.23",
+    "@cspell/dict-npm": "^5.1.24",
     "@cspell/dict-shell": "^1.1.0",
     "@cspell/dict-typescript": "^3.2.0",
     "@cspell/eslint-plugin": "^8.17.2",
