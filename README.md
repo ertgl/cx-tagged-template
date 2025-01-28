@@ -1,15 +1,12 @@
 # cx-tagged-template
 
-The initial specification and implementation of a sophisticated
-class-name-expression language, named as CX, written in TypeScript and released
-under the permissive [MIT](https://opensource.org/license/mit) license.
+Specification and initial implementation of a sophisticated
+class-name-expression DSL, named as CX, written in TypeScript.
 
-## Introduction
+## Overview
 
-CX (class-expressions) or CXL (class-expression language) is a concatenative
-domain-specific language for constructing class-name expressions with a
-minimal, yet, expressive syntax.
-
+CX (class-expressions) is a concatenative domain-specific language for
+constructing class-name expressions with a minimal, yet, expressive syntax.
 The language is initially designed to be used with tagged template literals in
 JavaScript, but it can also be implemented in other languages that support
 user-defined
@@ -17,17 +14,46 @@ user-defined
 [macros](https://en.wikipedia.org/wiki/Macro_(computer_science)),
 or other forms of syntactic extensions.
 
-> At the early stages of CX's design process, the language was not inspired by
-> concatenative programming concepts. However, as it evolved, I found myself
-> aligning with the principles of concatenative programming languages and
-> decided to embrace them. Since CX focuses only on class-name expressions, it
-> is tuned to be more developer-friendly on this specific purpose. For example,
-> in CX, line-feeds are considered as emit operators, and non-string
-> interpolations are considered as test operators. This design choice provides
-> a better developer experience by reducing keystrokes, boilerplate codes, and
-> cognitive load; while increasing the expressiveness. Apart from these
-> differences, CX's syntax and semantics can be considered as a subset of other
-> concatenative programming languages like Forth.
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="./assets/jsx-sample-dark.png"
+  />
+  <img
+    alt="Using cx-tagged-template with JSX"
+    src="./assets/jsx-sample-light.png"
+  />
+</picture>
+
+## Installation
+
+The package `cx-tagged-template` is available on `npm` and can be installed
+using any compatible package manager.
+
+```sh
+npm install cx-tagged-template
+```
+
+The code is compiled to both CJS and ESM formats, and supports tree-shaking.
+When bundled, the code size can be reduced to approximately 2.17 KB (minified
+and gzipped).
+
+## Usage
+
+To start using the `cx` template tag, you can import it from the package:
+
+```js
+import { cx } from 'cx-tagged-template';
+```
+
+Then, you can use the `cx` template tag to create class-name expressions:
+
+```js
+const className = cx`nice nice--better ${0} nice--best`; // "nice--best"
+```
+
+These code snippets demonstrate various features of the `cx` tagged template in
+JavaScript:
 
 <details>
   <summary>
@@ -36,21 +62,24 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // When a non-string value is used as an interpolation, it will be evaluated
-  // as a conditional expression. If the value is truthy, the preceding values
-  // will be emitted to the renderer. Otherwise, the values will be discarded.
-  //
-  // This type of interpolation does not require the placeholder to be
-  // separated with whitespaces. However, it is recommended to use whitespaces
-  // for better readability.
+  Non-string values can be used as condition tests in class-name expressions.
+  When a non-string value is used as an interpolation, it will be evaluated as
+  a conditional expression, like the `if` statements. If the value is truthy,
+  the preceding values will be kept in the stack for the next operations.
+  Otherwise, the values will be removed from the stack.
 
+  Separating the non-string values from the preceding values with whitespaces
+  is not necessary. However, it is recommended for better readability.
+
+  ```js
   const bordered = false;
 
   cx`
-  nice${!bordered}
+  nice ${!bordered}
   bordered ${bordered}
-  ` // "nice"
+  `;
+
+  // Output: "nice"
   ```
 </details>
 
@@ -61,12 +90,12 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // When a string value is used as an interpolation where the placeholder is
-  // not separated by whitespaces, it will be evaluated as a string
-  // concatenation. As a result, the preceding and interpolated values will be
-  // concatenated into a single string.
+  String values can be embedded in the class-name expressions by using
+  interpolations. When a placeholder is used with a string value and it is
+  not separated by whitespaces, it will be concatenated with the preceding
+  values.
 
+  ```js
   const colors = {
     dark: {
       fg: "white",
@@ -76,7 +105,9 @@ or other forms of syntactic extensions.
     },
   };
 
-  cx`text-${colors.light.fg} dark:text-${colors.dark.fg}` // "text-black dark:text-white"
+  cx`text-${colors.light.fg} dark:text-${colors.dark.fg}`;
+
+  // Output: "text-black dark:text-white"
   ```
 </details>
 
@@ -87,13 +118,18 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
+  String interpolations that are separated by whitespaces can be used to create
+  dynamic class-names (e.g. based on variables or JavaScript expressions).
+
   ```js
-  // When a string value is used as an interpolation where the placeholder is
-  // separated by whitespaces, it will be evaluated as a separate class-name.
+  /**
+   * @type {"" | "column" | "row"}
+   */
+  const flexDirection = "column";
 
-  const flexDirection = "column"; // "" | "column" | "row"
+  cx`flex ${flexDirection}`;
 
-  cx`flex ${flexDirection}` // "flex column"
+  // Output: "flex column"
   ```
 </details>
 
@@ -104,44 +140,58 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // When a string value is used as an interpolation where the placeholder is
-  // separated by whitespaces, it will be evaluated as a separate class-name.
-  // However, the `test` operator can be used to remove the preceding values
-  // based on the last value's truthiness.
-  //
-  // The `test` operator removes the preceding values only if the last value is
-  // falsy. Otherwise, unless it is a non-empty string, the operator removes
-  // only the last value from the stack.
+  For using string interpolations as condition tests, the `test` operator can
+  be used. The `test` operator removes the preceding values only if the last
+  value is falsy. Otherwise, unless it is a non-empty string, the operator
+  removes only the last value from the stack.
 
-  const flexDirection = ""; // "" | "column" | "row"
+  ```js
+  /**
+   * @type {"" | "column" | "row"}
+   */
+  const flexDirection = "";
 
   cx`
   nice
   flex ${flexDirection} ${cx.op.test} box
-  ` // "nice box"
+  `;
+
+  // Output: "nice box"
   ```
 </details>
 
 <details>
   <summary>
     <strong>
-      Example: Emitting values in the stack to the renderer
+      Example: Emitting values in the stack to the renderer explicitly
     </strong>
   </summary>
 
-  ```js
-  // The `emit` operator can be used to emit the values in the stack to the
-  // renderer and clear the stack for the next operations, explicitly. It is
-  // automatically inserted by the parser when a line feed or template feed
-  // (end of template) is detected.
+  Emitting is the process of sending the values in the stack to the renderer.
+  Which ignores non-string values and guarantees that the string values are
+  included in the final output (unless they are transformed to empty strings in
+  the renderer layer by a user-defined transformation function). It also clears
+  the stack for the next operations.
 
-  const flexDirection = "column"; // "" | "column" | "row"
+  When a line-feed or end-of-template is detected, the `emit` operator is
+  automatically inserted by the parser. However, it can also be used
+  explicitly.
+
+  **Hint:** Every line is isolated from the operators that are placed in the
+  other lines.
+
+  ```js
+  /**
+   * @type {"" | "column" | "row"}
+   */
+  const flexDirection = "column";
 
   cx`
   nice
   flex ${flexDirection} ${cx.op.emit} box
-  ` // "nice flex column box"
+  `;
+
+  // Output: "nice flex column box"
   ```
 </details>
 
@@ -152,25 +202,26 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // The `discard` operator can be used to clear the stack. It can be used for
-  // comments or debugging purposes.
-  //
-  // Since the line-feeds are considered as implicit emit operators, the
-  // `discard` operator can only be used for the values placed in the same
-  // line.
-  //
-  // However, the information of which values are discarded can be adjusted by
-  // the developer by using an explicit `emit` operator just after the
-  // class-names that are intended to be emitted.
+  Sometimes, it may be necessary to disable some class-names temporarily. The
+  `discard` operator can be used to clear the stack. Besides debugging
+  purposes, it can also be used for comments.
 
-  const flexDirection = "column"; // "" | "column" | "row"
+  **Hint:** To comment out specific parts of a line, the `discard` operator can
+  be used with the conjunction of the `emit` operator.
+
+  ```js
+  /**
+   * @type {"" | "column" | "row"}
+   */
+  const flexDirection = "column";
 
   cx`
   nice
   flex ${flexDirection} ${cx.op.emit} Comment out. ${cx.op.discard} box
   Your lovely important note. ${cx.op.discard}
-  ` // "nice flex column box"
+  `;
+
+  // Output: "nice flex column box"
   ```
 </details>
 
@@ -181,40 +232,52 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // The class-names emitted to the renderer are deduplicated by default. This
-  // behavior ensures that the same class-name is not repeated in the final
-  // output.
+  The class-names emitted to the renderer are deduplicated by default. This
+  behavior ensures that the same class-name is not repeated in the final
+  output.
 
-  cx`foo foo bar`; // "foo bar"
+  ```js
+  cx`foo foo bar`;
+
+  // Output: "foo bar"
   ```
 </details>
 
 <details>
   <summary>
     <strong>
-      Example: Transforming class-names with CSS Modules
+      Example: Transforming class-names e.g. with CSS Modules
     </strong>
   </summary>
 
+  Transformer layer is an extension point that allows developers to customize
+  the final output of the class-names by defining their own transformation
+  functions. The transformer layer can be used to apply transformations such as
+  mapping CSS Modules, adding prefixes or suffixes, or even removing class-names
+  based on certain conditions by returning an empty string.
+
+  For utilizing CSS Modules, the implementation provides a built-in extension
+  that can be used to create a transformer that maps class-names to their
+  respective values, which are imported from the CSS module file.
+
+  **Hint:** A custom `cx` tag can be created per CSS module file.
+
+  **Hint:** The custom `cx` tag can be named as `cmx` for distinguishing it
+  from the default `cx` tag.
+
   ```js
-  // Any transformation can be applied to the class-names by defining a custom
-  // transformer function.
-  //
-  // If the transformer returns an empty string, the class-name will be
-  // discarded.
-  //
-  // For utilizing CSS Modules, the built-in extension can be used to create a
-  // transformer that maps class-names to their respective values, which are
-  // imported from the CSS module file.
-  //
-  // When CSS Modules transformation is used with the `cx` tag, it is
-  // recommended to name it as `cmx` to avoid conflicts with the unbound `cx`
-  // tag.
+  import { createCX } from "cx-tagged-template";
+  import { createCSSModulesTransformer } from "cx-tagged-template/extensions/css-modules";
 
   import styles from "./styles.module.css";
 
-  cmx`foo bar`; // "bar" (assuming styles.foo = "bar")
+  const cmx = createCX({
+    transformer: createCSSModulesTransformer(styles),
+  });
+
+  const className = cmx`foo bar`;
+
+  // Assuming that `styles.foo` equals to "bar", output: "bar"
   ```
 </details>
 
@@ -225,15 +288,24 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```js
-  // Custom operators can be defined by using the `defineOperator` function.
-  // The operator function should accept the stack and emit function as
-  // arguments.
-  //
-  // This example demonstrates defining a custom operator named `prefix` that
-  // prefixes the class-names placed before the last value using the last
-  // value.
+  In addition to the built-in operators, custom operators can be defined by
+  using the `defineOperator` function. The operator function should accept the
+  stack and emit function as arguments.
 
+  This feature can be used for creating custom operators that are specific to
+  the project or the use-case.
+
+  In the following example, a custom operator named `prefix` is defined. The
+  operator accepts the last value as a prefix and prefixes the class-names that
+  are placed before the prefix.
+
+  **Hint:** The `cx.op` object can be used for registering and accessing the
+  operators. This eliminates the need for importing the operators in every
+  file.
+
+  **Hint:** Each custom `cx` tag can have its own set of custom operators.
+
+  ```js
   cx.op.prefix = defineOperator({
     name: "prefix",
     operate(
@@ -241,19 +313,24 @@ or other forms of syntactic extensions.
       emit,
     )
     {
-      // Get the last value from the stack by removing it.
+      // Get the last value by removing it from the stack.
       const prefix = stack.values.pop();
 
-      // Keep the CX runtime error-free.
+      // Keep the CX runtime error-free:
+      // Ignore the values that the operator cannot be applied to.
       if (typeof prefix === "string")
       {
+        // Iterate over the values in the stack.
         for (let i = 0; i < stack.values.length; i++)
         {
+          // Get the value of the current index.
           const value = stack.values[i];
 
-          // Only string values can be prefixed.
+          // Keep the CX runtime error-free:
+          // Ignore the values that the operator cannot be applied to.
           if (typeof value === "string")
           {
+            // Mutate the value in the stack.
             stack.values[i] = `${prefix}${value}`;
           }
         }
@@ -261,7 +338,9 @@ or other forms of syntactic extensions.
     },
   });
 
-  cx`foo bar the- ${cx.op.prefix}` // the-foo the-bar
+  cx`foo bar the- ${cx.op.prefix}`;
+
+  // Output: "the-foo the-bar"
   ```
 </details>
 
@@ -272,15 +351,11 @@ or other forms of syntactic extensions.
     </strong>
   </summary>
 
-  ```jsx
-  // Since the line-feeds are considered as emit operators,
-  // every line is a new group of class-names that is isolated from the
-  // operators placed in the other lines.
-  //
-  // In CX, I recommend you to not hesitate to press <Enter> often. Because
-  // without it, there is a lot of `===`, `?`, `:`, `.`, `,`, `true`,
-  // `[`, `]`, `{`, `}`, `(`, `)`, `'`. `"` ...
+  The `cx` tagged template can be used inside JSX components for creating
+  dynamic class-names, with an increased level of readability and
+  maintainability compared to the traditional string concatenation methods.
 
+  ```jsx
   const Button = (props) =>
   {
     const {
@@ -293,10 +368,10 @@ or other forms of syntactic extensions.
     } = props;
 
     return (
-      <div
+      <button
         className={cmx`
-          button
-          button--${color}
+          cta-button
+          cta-button--${color}
           px-4 py-1.5 ${!dense}
           border
           ${bordered ? "border-gray-300 dark:border-gray-700" : "border-transparent"}
@@ -311,35 +386,39 @@ or other forms of syntactic extensions.
   ```
 </details>
 
-## Motivation
+## Syntax and Semantics
 
-The language is designed to be simple and easy to use, with a minimal syntax
-that is both readable and writable. It is intended to be used in conjunction
-with tagged template literals in JavaScript, allowing developers to create
-class-name expressions that are both dynamic and composable.
+The syntax and semantics of CX are designed to be minimal and easy to use,
+allowing developers to create class-name expressions that are both dynamic and
+composable. At the early stages of CX's design process, the language was not
+actually inspired by concatenative programming concepts. However, as it
+evolved, I found myself aligning with the principles of concatenative
+programming languages and decided to embrace them. Since CX focuses only on
+class-name expressions, it is tuned to be more developer-friendly on this
+specific purpose. For example, in CX, line-feeds are considered as emit
+operators, and non-string interpolations are considered as test operators.
+This design choice provides a smooth developer experience by reducing
+keystrokes, boilerplate codes, and cognitive load; while increasing the
+expressiveness. Apart from these differences, CX's syntax and semantics can be
+considered as a subset of other concatenative programming languages like Forth.
 
 Before diving into the implementation details, it is worth mentioning that;
 for ensuring the compatibility and correctness of the implementation with the
 real-world class-names, the implementation has been thoroughly tested with over
-**21400** scenarios using a small dataset of class-names composed with
-different syntaxes and patterns. The dataset is built by extracting various
-class-names from the documentation of one of the most popular CSS frameworks,
+21400 scenarios using a small dataset of class-names composed with different
+syntaxes and patterns. The dataset is built by extracting various class-names
+from the documentation of one of the most popular CSS frameworks,
 `Tailwind CSS`.
 
-## Syntax and Semantics
+To understand the syntax and semantics of CX, let's continue with this
+JavaScript implementation; as it can also be used as a reference for integrating
+the DSL into other languages. The implementation of `cx-tagged-template` is
+composed of several key components, each responsible for a specific aspect of
+the class-name-expression construction process.
 
-To understand the syntax and semantics of CX, let's continue with the initial
-implementation of the language, `cx-tagged-template`. As it is published as a
-package on `npm`, it is possible to install it and start using it in your
-projects. However, it can also be used as a reference implementation for
-integrating CX into other languages.
-
-The implementation of `cx-tagged-template` is composed of several key
-components, each responsible for a specific aspect of the class-name-expression
-construction process. In the following sections, we will explore each of these
-components in detail, starting with the consolidator layer, which is
-responsible for transforming tagged-template specific data into a more
-generalized format.
+In the following sections, we will explore each of these components in detail,
+starting with the consolidator layer, which is responsible for transforming
+tagged-template specific data into a more generalized format.
 
 ### Consolidator
 
@@ -442,15 +521,15 @@ cx`nice nice--better ${true} ${cx.op.discard} nice--best`; // "nice--best"
 
 #### Built-in Operators
 
-Respecting the minimalist nature of the language, the following built-in
-operators are provided:
+Respecting the minimalist nature of the language, a small set of operators is
+provided to handle the most essential tasks. These operators are:
 
+- [`discard`](./src/operators/discard.ts): Clears the stack. It can be used for
+  comments or debugging purposes.
 - [`emit`](./src/operators/emit.ts): Emits the string values in the stack to
   the renderer, then clears the stack for the next operations.
 - [`test`](./src/operators/test.ts): Works as a conditional operator, removing
   values from the stack based on the last value.
-- [`discard`](./src/operators/discard.ts): Clears the stack. It can be used for
-  comments or debugging purposes.
 
 #### Implicit Operators
 
@@ -508,52 +587,6 @@ present in the final output.
 The template tag serves as the public interface, allowing developers to create
 class-name expressions. It orchestrates the flow of data through the various
 components, ultimately returning the final result.
-
-## Installation
-
-The library `cx-tagged-template` is available on `npm` and can be installed
-using a compatible package manager:
-
-```sh
-npm install cx-tagged-template
-# or
-yarn add cx-tagged-template
-```
-
-**Note:** The library is compiled into both CJS and ESM formats. It supports
-[tree-shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking),
-and when bundled with a compatible bundler, the code size can be reduced to
-approximately 2.17 KB (minified and gzipped).
-
-## Usage
-
-To start using the `cx` template tag, you can import it from the package:
-
-```js
-import { cx } from 'cx-tagged-template';
-
-const className = cx`nice nice--better ${0} nice--best`; // "nice--best"
-```
-
-### CSS Modules Integration
-
-For projects utilizing CSS Modules, the built-in extension can be used to
-create a transformer that maps class-names to their respective values, which
-are imported from the CSS module file. Then, a custom `cx` tag can be created
-using the transformer:
-
-```js
-import { createCX } from "cx-tagged-template";
-import { createCSSModulesTransformer } from "cx-tagged-template/extensions/css-modules";
-
-import styles from "./styles.module.css";
-
-const cmx = createCX({
-  transformer: createCSSModulesTransformer(styles),
-});
-
-const className = cmx`foo bar`; // "bar" (assuming styles.foo = "bar")
-```
 
 ## References
 
