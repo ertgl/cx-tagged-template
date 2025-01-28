@@ -1,7 +1,7 @@
 # cx-tagged-template
 
 Specification and initial implementation of a sophisticated
-class-name-expression DSL, named as CX, written in TypeScript.
+class-name-expression DSL, written in TypeScript.
 
 ## Overview
 
