@@ -399,7 +399,7 @@ JavaScript:
           border
           ${bordered ? "border-gray-300 dark:border-gray-700" : "border-transparent"}
           opacity-50 cursor-not-allowed ${disabled}
-          Append custom class-names passed from the parent component: {$cx.op.discard}
+          Append custom class-names passed from the parent component: ${cx.op.discard}
           ${className}
         `}
         {...rest}
