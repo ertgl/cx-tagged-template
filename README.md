@@ -31,7 +31,7 @@ constructing class-name expressions with a minimal, yet, expressive syntax.
 The language is initially designed to be used with tagged template literals in
 JavaScript, but it can also be implemented in other languages that support
 user-defined
-[sigils](https://en.wikipedia.org/wiki/Macro_(computer_science)),
+[sigils](https://en.wikipedia.org/wiki/Sigil_(computer_programming)),
 [macros](https://en.wikipedia.org/wiki/Macro_(computer_science)),
 or other forms of syntactic extensions.
 
