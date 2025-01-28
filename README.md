@@ -3,6 +3,17 @@
 Specification and initial implementation of a sophisticated
 class-name-expression DSL, written in TypeScript.
 
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="./assets/jsx-sample-dark.png"
+  />
+  <img
+    alt="Using cx-tagged-template with JSX"
+    src="./assets/jsx-sample-light.png"
+  />
+</picture>
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -34,17 +45,6 @@ user-defined
 [sigils](https://en.wikipedia.org/wiki/Sigil_(computer_programming)),
 [macros](https://en.wikipedia.org/wiki/Macro_(computer_science)),
 or other forms of syntactic extensions.
-
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="./assets/jsx-sample-dark.png"
-  />
-  <img
-    alt="Using cx-tagged-template with JSX"
-    src="./assets/jsx-sample-light.png"
-  />
-</picture>
 
 ## Installation
 
@@ -81,7 +81,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Using non-string values as conditional expressions
+      Using non-string values as conditional expressions
     </strong>
   </summary>
 
@@ -109,7 +109,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Using interpolations for string concatenations
+      Using interpolations for string concatenations
     </strong>
   </summary>
 
@@ -137,7 +137,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Using interpolations for dynamic class-names
+      Using interpolations for dynamic class-names
     </strong>
   </summary>
 
@@ -159,14 +159,16 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Using string interpolations as conditional expressions
+      Using string interpolations as conditional expressions
     </strong>
   </summary>
 
-  For using string interpolations as condition tests, the `test` operator can
-  be used. The `test` operator removes the preceding values only if the last
-  value is falsy. Otherwise, unless it is a non-empty string, the operator
-  removes only the last value from the stack.
+  The `test` operator can be used for conditional removal of values based
+  on the last value in the stack. It is automatically inserted by the parser
+  when a non-string interpolation is detected. However, to test string values,
+  the operator can be used explicitly.
+
+  **Hint:** The `test` operator does not remove non-empty string test values.
 
   ```js
   /**
@@ -181,12 +183,26 @@ JavaScript:
 
   // Output: "nice box"
   ```
+
+  ```js
+  /**
+   * @type {"" | "column" | "row"}
+   */
+  const flexDirection = "column";
+
+  cx`
+  nice
+  flex ${flexDirection} ${cx.op.test} box
+  `;
+
+  // Output: "nice flex column box"
+  ```
 </details>
 
 <details>
   <summary>
     <strong>
-      Example: Emitting values in the stack to the renderer explicitly
+      Emitting values in the stack to the renderer explicitly
     </strong>
   </summary>
 
@@ -221,7 +237,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Discarding values from the stack
+      Discarding values from the stack
     </strong>
   </summary>
 
@@ -251,7 +267,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Deduplicating class-names
+      Deduplicating class-names
     </strong>
   </summary>
 
@@ -269,7 +285,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Transforming class-names e.g. with CSS Modules
+      Transforming class-names e.g. with CSS Modules
     </strong>
   </summary>
 
@@ -307,7 +323,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Defining custom operators
+      Defining custom operators
     </strong>
   </summary>
 
@@ -370,7 +386,7 @@ JavaScript:
 <details>
   <summary>
     <strong>
-      Example: Using with JSX components
+      Using with JSX components
     </strong>
   </summary>
 
