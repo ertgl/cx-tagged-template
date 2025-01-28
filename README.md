@@ -3,6 +3,27 @@
 Specification and initial implementation of a sophisticated
 class-name-expression DSL, written in TypeScript.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Syntax and Semantics](#syntax-and-semantics)
+  - [Consolidator](#consolidator)
+  - [Tokenizer](#tokenizer)
+  - [Parser](#parser)
+  - [Stack](#stack)
+  - [Operators](#operators)
+    - [Built-in Operators](#built-in-operators)
+    - [Implicit Operators](#implicit-operators)
+  - [Interpreter](#interpreter)
+  - [Transformer](#transformer)
+  - [Renderer](#renderer)
+  - [Template Tag](#template-tag)
+- [References](#references)
+- [License](#license)
+
 ## Overview
 
 CX (class-expressions) is a concatenative domain-specific language for
@@ -51,6 +72,8 @@ Then, you can use the `cx` template tag to create class-name expressions:
 ```js
 const className = cx`nice nice--better ${0} nice--best`; // "nice--best"
 ```
+
+## Examples
 
 These code snippets demonstrate various features of the `cx` tagged template in
 JavaScript:
