@@ -6,3 +6,21 @@ updates:
       interval: "daily"
       time: "10:00"
       timezone: "Europe/Istanbul"
+    groups:
+      babel:
+        patterns:
+          - "@babel/*"
+          - "@types/babel__*"
+          - "babel-*"
+      commitlint:
+        patterns:
+          - "@commitlint/*"
+      eslint:
+        patterns:
+          - "@cspell/*"
+          - "@eslint/*"
+          - "eslint"
+          - "eslint-*"
+          - "*-eslint"
+          - "*/eslint-*"
+          - "globals"
