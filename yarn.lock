@@ -2070,9 +2070,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.1.24":
-  version: 5.1.24
-  resolution: "@cspell/dict-npm@npm:5.1.24"
-  checksum: 10c0/47f602355ecb940b4584403b9ca8504a21faeec6e0672e81eca5d14b82331829d7edee7fd054893667ba128b51e01b6d85915eb49afc26e102c11ecd9ef2c7f7
+  version: 5.1.25
+  resolution: "@cspell/dict-npm@npm:5.1.25"
+  checksum: 10c0/087c48ddc49f68c7f0e3213acc41ce3829f8e5509bf70d083e155b37f4ae456e12f86f43597f906c3dc6635e494dbcd2d014e699d8fa7dded45af08cb4d4c285
   languageName: node
   linkType: hard
 
@@ -2555,8 +2555,8 @@ __metadata:
   linkType: hard
 
 "@stylistic/eslint-plugin@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "@stylistic/eslint-plugin@npm:3.0.1"
+  version: 3.1.0
+  resolution: "@stylistic/eslint-plugin@npm:3.1.0"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.13.0"
     eslint-visitor-keys: "npm:^4.2.0"
@@ -2565,7 +2565,7 @@ __metadata:
     picomatch: "npm:^4.0.2"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10c0/6eda8f5f463cc1fca30aec9e0311fd69a1ca84904856e0a3f0108bff411448592a35696dc2b5060fffe0d9c85ce67026cb479d6435bcdb083a29c9d9cb9ebb18
+  checksum: 10c0/e593d78103a89e0555c119625c0ba8c80c8d2c7add0e85215f6be9929002207067df53714785c2c75b8b9e6df774d25c7dead211aed89a57cb45b5cec902a19e
   languageName: node
   linkType: hard
 
