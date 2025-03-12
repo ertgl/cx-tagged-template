@@ -82,7 +82,7 @@ runs:
 
     - name: Install dependencies
       id: install-dependencies
-      if: ${{ steps.restore-build-cache.outputs.cache-hit != 'true' }}
+      if: ${{ steps.restore-node-modules-cache.outputs.cache-hit != 'true' }}
       shell: bash
       run: |
         yarn install --immutable
