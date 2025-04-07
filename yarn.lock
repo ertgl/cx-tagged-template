@@ -2047,16 +2047,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^4.1.54":
-  version: 4.1.62
-  resolution: "@cspell/dict-en-gb@npm:4.1.62"
-  checksum: 10c0/6f0597c8d6cdddce029ecf68b3216f13ca99068304ac29f184a8370cec09327cf49af78f7f7209c6027ffb90687d477fb2346c29c1a2278329e0a96105adb600
+  version: 4.1.63
+  resolution: "@cspell/dict-en-gb@npm:4.1.63"
+  checksum: 10c0/10ccdb3a87b5719ab1d4c1d847ba276213ab528e30ab269746b2cae52d0c07d80d46babe320d551d18daf7c0583e5efcec89c1d78a39fe6e138892f6f2f55400
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.3.30, @cspell/dict-en_us@npm:^4.3.35":
-  version: 4.3.37
-  resolution: "@cspell/dict-en_us@npm:4.3.37"
-  checksum: 10c0/3bc2bebe04e3f1d6f1feee73dafe799f9bace034b8d521a59015774c18ec08fc543a3eb4efad9631f7572dcc014dfdb4824463575c5c1176e02c77fd7b77cd3d
+  version: 4.4.0
+  resolution: "@cspell/dict-en_us@npm:4.4.0"
+  checksum: 10c0/c620c3b11cf7bf478f8dce130d564678e93c21991a04587be2930eb308d7943d33c0946d35b6f8cfc0a31df8f789e145c26d5a6713a9582daa296fd91a396b85
   languageName: node
   linkType: hard
 
@@ -2227,9 +2227,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.1.24, @cspell/dict-npm@npm:^5.1.31":
-  version: 5.1.33
-  resolution: "@cspell/dict-npm@npm:5.1.33"
-  checksum: 10c0/a5c54673c2462e0c48b6d904d995d94242b518d9c3ed94e25073226030156f991f3e9993c55e810f7bb2bb0ae479bcccdfce05e004434765598225e9297ddeff
+  version: 5.1.34
+  resolution: "@cspell/dict-npm@npm:5.1.34"
+  checksum: 10c0/89c0dab218dc188c363076112d192cc433a16fbacabda89e3299c60efc4fb6123d889eee26ba90d8e9ae1b909a4e5834a0cf8055ee45939100827d31a6c04ac5
   languageName: node
   linkType: hard
 
@@ -2410,14 +2410,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/config-array@npm:^0.19.2":
-  version: 0.19.2
-  resolution: "@eslint/config-array@npm:0.19.2"
+"@eslint/config-array@npm:^0.20.0":
+  version: 0.20.0
+  resolution: "@eslint/config-array@npm:0.20.0"
   dependencies:
     "@eslint/object-schema": "npm:^2.1.6"
     debug: "npm:^4.3.1"
     minimatch: "npm:^3.1.2"
-  checksum: 10c0/dd68da9abb32d336233ac4fe0db1e15a0a8d794b6e69abb9e57545d746a97f6f542496ff9db0d7e27fab1438546250d810d90b1904ac67677215b8d8e7573f3d
+  checksum: 10c0/94bc5d0abb96dc5295ff559925242ff75a54eacfb3576677e95917e42f7175e1c4b87bf039aa2a872f949b4852ad9724bf2f7529aaea6b98f28bb3fca7f1d659
   languageName: node
   linkType: hard
 
@@ -2463,10 +2463,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.23.0, @eslint/js@npm:^9.19.0":
-  version: 9.23.0
-  resolution: "@eslint/js@npm:9.23.0"
-  checksum: 10c0/4e70869372b6325389e0ab51cac6d3062689807d1cef2c3434857571422ce11dde3c62777af85c382b9f94d937127598d605d2086787f08611351bf99faded81
+"@eslint/js@npm:9.24.0, @eslint/js@npm:^9.19.0":
+  version: 9.24.0
+  resolution: "@eslint/js@npm:9.24.0"
+  checksum: 10c0/efe22e29469e4140ac3e2916be8143b1bcfd1084a6edf692b7a58a3e54949d53c67f7f979bc0a811db134d9cc1e7bff8aa71ef1376b47eecd7e226b71206bb36
   languageName: node
   linkType: hard
 
@@ -3953,16 +3953,16 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^9.19.0":
-  version: 9.23.0
-  resolution: "eslint@npm:9.23.0"
+  version: 9.24.0
+  resolution: "eslint@npm:9.24.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.12.1"
-    "@eslint/config-array": "npm:^0.19.2"
+    "@eslint/config-array": "npm:^0.20.0"
     "@eslint/config-helpers": "npm:^0.2.0"
     "@eslint/core": "npm:^0.12.0"
     "@eslint/eslintrc": "npm:^3.3.1"
-    "@eslint/js": "npm:9.23.0"
+    "@eslint/js": "npm:9.24.0"
     "@eslint/plugin-kit": "npm:^0.2.7"
     "@humanfs/node": "npm:^0.16.6"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
@@ -3998,7 +3998,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/9616c308dfa8d09db8ae51019c87d5d05933742214531b077bd6ab618baab3bec7938256c14dcad4dc47f5ba93feb0bc5e089f68799f076374ddea21b6a9be45
+  checksum: 10c0/f758ff1b9d2f2af5335f562f3f40aa8f71607b3edca33f7616840a222ed224555aeb3ac6943cc86e4f9ac5dc124a60bbfde624d054fb235631a8c04447e39ecc
   languageName: node
   linkType: hard
 
