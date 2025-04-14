@@ -2047,16 +2047,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^4.1.54":
-  version: 4.1.63
-  resolution: "@cspell/dict-en-gb@npm:4.1.63"
-  checksum: 10c0/10ccdb3a87b5719ab1d4c1d847ba276213ab528e30ab269746b2cae52d0c07d80d46babe320d551d18daf7c0583e5efcec89c1d78a39fe6e138892f6f2f55400
+  version: 4.1.64
+  resolution: "@cspell/dict-en-gb@npm:4.1.64"
+  checksum: 10c0/dad5591e0f348297cc614b3e927d4872ea7a189f7998082586b2b6ed579a0503445dc452368204245238179e4ac0d890077934caab6cda1d5bcca3bafbb14aa6
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.3.30, @cspell/dict-en_us@npm:^4.3.35":
-  version: 4.4.0
-  resolution: "@cspell/dict-en_us@npm:4.4.0"
-  checksum: 10c0/c620c3b11cf7bf478f8dce130d564678e93c21991a04587be2930eb308d7943d33c0946d35b6f8cfc0a31df8f789e145c26d5a6713a9582daa296fd91a396b85
+  version: 4.4.1
+  resolution: "@cspell/dict-en_us@npm:4.4.1"
+  checksum: 10c0/d701bd6026d4213aa5d2b193554e963142685424d8898b4ad37c7c47b561211207f2999d01649a18d5f5feeb30e5d420c0a3e22e2b539223fe4feffc061c9d66
   languageName: node
   linkType: hard
 
@@ -2227,9 +2227,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.1.24, @cspell/dict-npm@npm:^5.1.31":
-  version: 5.1.34
-  resolution: "@cspell/dict-npm@npm:5.1.34"
-  checksum: 10c0/89c0dab218dc188c363076112d192cc433a16fbacabda89e3299c60efc4fb6123d889eee26ba90d8e9ae1b909a4e5834a0cf8055ee45939100827d31a6c04ac5
+  version: 5.2.0
+  resolution: "@cspell/dict-npm@npm:5.2.0"
+  checksum: 10c0/36d9a78e4f8d2b37e3d2a0bd8ca7449b173f7c52a33fb813e43f5a28279a3bce20029cd4e711c060103a12af7fdd71c5a95c1510ee4e73fdda52560b361e7e63
   languageName: node
   linkType: hard
 
