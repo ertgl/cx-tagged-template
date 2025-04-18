@@ -2470,28 +2470,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/json@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "@eslint/json@npm:0.11.0"
+"@eslint/json@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "@eslint/json@npm:0.12.0"
   dependencies:
     "@eslint/core": "npm:^0.12.0"
     "@eslint/plugin-kit": "npm:^0.2.7"
     "@humanwhocodes/momoa": "npm:^3.3.4"
     natural-compare: "npm:^1.4.0"
-  checksum: 10c0/9161cb6f540e032f13141905dec8cd744b996856018e7668387489d675e3a5ad2bf71d3d77210373de3e88198631e37a3a7b7287031b01e7cf6dab700c39ae13
+  checksum: 10c0/68fb045a8fde1fd96c6fa05b7102000328fa1786f935aea007b32a0e178445aebdddb6efeb4518b16bcaa9d819e426ef29eb8fc69d0f1fec720c550be22f631a
   languageName: node
   linkType: hard
 
 "@eslint/markdown@npm:^6.2.2":
-  version: 6.3.0
-  resolution: "@eslint/markdown@npm:6.3.0"
+  version: 6.4.0
+  resolution: "@eslint/markdown@npm:6.4.0"
   dependencies:
     "@eslint/core": "npm:^0.10.0"
     "@eslint/plugin-kit": "npm:^0.2.5"
     mdast-util-from-markdown: "npm:^2.0.2"
+    mdast-util-frontmatter: "npm:^2.0.1"
     mdast-util-gfm: "npm:^3.0.0"
+    micromark-extension-frontmatter: "npm:^2.0.0"
     micromark-extension-gfm: "npm:^3.0.0"
-  checksum: 10c0/a0dbb587325e3d0fbd72380927220cbae61720b8abf2cbfe3835b865b8998508041e44f1f2b856ba6ad54c62924d779ee69ffd3154ee3770ea9f0a44a9d6d9b7
+  checksum: 10c0/783907fa51e8102d659a5d339600c85ee8f0606db2795f0fa855102149d45906c73e32d1bf4d670cae7aaab250c414dad5f6dcbc41f1e234ffa5877cc069d2b8
   languageName: node
   linkType: hard
 
@@ -3756,7 +3758,7 @@ __metadata:
     "@cspell/dict-typescript": "npm:^3.2.0"
     "@cspell/eslint-plugin": "npm:^8.17.2"
     "@eslint/js": "npm:^9.19.0"
-    "@eslint/json": "npm:^0.11.0"
+    "@eslint/json": "npm:^0.12.0"
     "@eslint/markdown": "npm:^6.2.2"
     "@stylistic/eslint-plugin": "npm:^4.0.1"
     "@types/babel__core": "npm:^7.20.5"
@@ -4197,6 +4199,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fault@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "fault@npm:2.0.1"
+  dependencies:
+    format: "npm:^0.2.0"
+  checksum: 10c0/b80fbf1019b9ce8b08ee09ce86e02b028563e13a32ac3be34e42bfac00a97b96d8dee6d31e26578ffc16224eb6729e01ff1f97ddfeee00494f4f56c0aeed4bdd
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^8.0.0":
   version: 8.0.0
   resolution: "file-entry-cache@npm:8.0.0"
@@ -4270,6 +4281,13 @@ __metadata:
     cross-spawn: "npm:^7.0.0"
     signal-exit: "npm:^4.0.1"
   checksum: 10c0/028f1d41000553fcfa6c4bb5c372963bf3d9bf0b1f25a87d1a6253014343fb69dfb1b42d9625d7cf44c8ba429940f3d0ff718b62105d4d4a4f6ef8ca0a53faa2
+  languageName: node
+  linkType: hard
+
+"format@npm:^0.2.0":
+  version: 0.2.2
+  resolution: "format@npm:0.2.2"
+  checksum: 10c0/6032ba747541a43abf3e37b402b2f72ee08ebcb58bf84d816443dd228959837f1cddf1e8775b29fa27ff133f4bd146d041bfca5f9cf27f048edf3d493cf8fee6
   languageName: node
   linkType: hard
 
@@ -5139,6 +5157,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mdast-util-frontmatter@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "mdast-util-frontmatter@npm:2.0.1"
+  dependencies:
+    "@types/mdast": "npm:^4.0.0"
+    devlop: "npm:^1.0.0"
+    escape-string-regexp: "npm:^5.0.0"
+    mdast-util-from-markdown: "npm:^2.0.0"
+    mdast-util-to-markdown: "npm:^2.0.0"
+    micromark-extension-frontmatter: "npm:^2.0.0"
+  checksum: 10c0/d9b0b70dd9c574cc0220d4e05dd8e9d86ac972a6a5af9e0c49c839b31cb750d4313445cfbbdf9264a7fbe3f8c8d920b45358b8500f4286e6b9dc830095b25b9a
+  languageName: node
+  linkType: hard
+
 "mdast-util-gfm-autolink-literal@npm:^2.0.0":
   version: 2.0.1
   resolution: "mdast-util-gfm-autolink-literal@npm:2.0.1"
@@ -5287,6 +5319,18 @@ __metadata:
     micromark-util-symbol: "npm:^2.0.0"
     micromark-util-types: "npm:^2.0.0"
   checksum: 10c0/87c7a75cd339189eb6f1d6323037f7d108d1331d953b84fe839b37fd385ee2292b27222327c1ceffda46ba5d5d4dee703482475e5ee8744be40c9e308d8acb77
+  languageName: node
+  linkType: hard
+
+"micromark-extension-frontmatter@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "micromark-extension-frontmatter@npm:2.0.0"
+  dependencies:
+    fault: "npm:^2.0.0"
+    micromark-util-character: "npm:^2.0.0"
+    micromark-util-symbol: "npm:^2.0.0"
+    micromark-util-types: "npm:^2.0.0"
+  checksum: 10c0/7d0d876e598917a67146d29f536d6fbbf9d1b2401a77e2f64a3f80f934a63ff26fa94b01759c9185c24b2a91e4e6abf908fa7aa246f00a7778a6b37a17464300
   languageName: node
   linkType: hard
 
