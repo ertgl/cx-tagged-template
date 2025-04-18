@@ -62,7 +62,7 @@
     "@cspell/dict-typescript": "^3.2.0",
     "@cspell/eslint-plugin": "^8.17.2",
     "@eslint/js": "^9.19.0",
-    "@eslint/json": "^0.11.0",
+    "@eslint/json": "^0.12.0",
     "@eslint/markdown": "^6.2.2",
     "@stylistic/eslint-plugin": "^4.0.1",
     "@types/babel__core": "^7.20.5",
