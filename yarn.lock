@@ -2047,16 +2047,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^4.1.54":
-  version: 4.1.64
-  resolution: "@cspell/dict-en-gb@npm:4.1.64"
-  checksum: 10c0/dad5591e0f348297cc614b3e927d4872ea7a189f7998082586b2b6ed579a0503445dc452368204245238179e4ac0d890077934caab6cda1d5bcca3bafbb14aa6
+  version: 4.1.65
+  resolution: "@cspell/dict-en-gb@npm:4.1.65"
+  checksum: 10c0/36174d28e58eb89f338965cad387ef26e3ee5982cfae59535c1aaaa487839f642808ab698657b3771cc9eb261cf093e194834a3fd6cb8aa625d91c92a75dd952
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.3.30, @cspell/dict-en_us@npm:^4.4.2":
-  version: 4.4.2
-  resolution: "@cspell/dict-en_us@npm:4.4.2"
-  checksum: 10c0/15abb719ab427b4a163a053a6c908ab94f9112be68b6f9bf0bc6bb7d735400cd4c160306aeab79da28fb2ca2f79210c506fb16357faa4e24ca1e3b218377f668
+  version: 4.4.3
+  resolution: "@cspell/dict-en_us@npm:4.4.3"
+  checksum: 10c0/3f3a76dc48c9c63c1cf3ac697b423b2d621264b3fa6e70d35d49103eef4986e6305a7895a54ca015b01985c2079c22653886ff538a98f0f8bdf58ab9c9bf461c
   languageName: node
   linkType: hard
 
@@ -2227,9 +2227,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.1.24, @cspell/dict-npm@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@cspell/dict-npm@npm:5.2.0"
-  checksum: 10c0/36d9a78e4f8d2b37e3d2a0bd8ca7449b173f7c52a33fb813e43f5a28279a3bce20029cd4e711c060103a12af7fdd71c5a95c1510ee4e73fdda52560b361e7e63
+  version: 5.2.1
+  resolution: "@cspell/dict-npm@npm:5.2.1"
+  checksum: 10c0/402d0a2b3819d3b073c2b851eb09e0b70121e94373c6642f444947e026b48a12c3f11f0ae5ef08fa7ac579568cccc9d088ca1509d39f1da0ecd8d5178263a754
   languageName: node
   linkType: hard
 
@@ -3922,21 +3922,21 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-perfectionist@npm:^4.7.0":
-  version: 4.12.0
-  resolution: "eslint-plugin-perfectionist@npm:4.12.0"
+  version: 4.12.1
+  resolution: "eslint-plugin-perfectionist@npm:4.12.1"
   dependencies:
     "@typescript-eslint/types": "npm:^8.31.0"
     "@typescript-eslint/utils": "npm:^8.31.0"
     natural-orderby: "npm:^5.0.0"
   peerDependencies:
     eslint: ">=8.45.0"
-  checksum: 10c0/c0a1d7e7f4b4124b32b7a8df826c84ec09c35154219cf89e7dd3cea0bcf71df3f79ce563c3af0f7685b5f12f183e8cc54b5a7a2b43ee155727c6c0a866141a0b
+  checksum: 10c0/44137324fd25f21798b16b99f45fb8c884e7c250e74b381d60396f7c57782d36aec81c2c8888dc308cae280a32b590f3a7ddc8c59aa1597c37d451eb176c4fb8
   languageName: node
   linkType: hard
 
 "eslint-plugin-yml@npm:^1.16.0":
-  version: 1.17.0
-  resolution: "eslint-plugin-yml@npm:1.17.0"
+  version: 1.18.0
+  resolution: "eslint-plugin-yml@npm:1.18.0"
   dependencies:
     debug: "npm:^4.3.2"
     escape-string-regexp: "npm:4.0.0"
@@ -3945,7 +3945,7 @@ __metadata:
     yaml-eslint-parser: "npm:^1.2.1"
   peerDependencies:
     eslint: ">=6.0.0"
-  checksum: 10c0/3923811eb214b44df80f8b203aa2773dc15d6a766706a5ca48e6511f1345372fada0d958c89fad656a1b699bfdf28f59d4c203a8614ad0366b3018258c3c0ace
+  checksum: 10c0/ff6619bb488c98f3b6639c58f135f375bba6a4e4763cfeded461c6bbe654164678055981d1a27949568efc5ca9f3904e3abdda593b837cabb96f58948cc2d6be
   languageName: node
   linkType: hard
 
