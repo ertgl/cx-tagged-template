@@ -3922,15 +3922,15 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-perfectionist@npm:^4.7.0":
-  version: 4.12.2
-  resolution: "eslint-plugin-perfectionist@npm:4.12.2"
+  version: 4.12.3
+  resolution: "eslint-plugin-perfectionist@npm:4.12.3"
   dependencies:
     "@typescript-eslint/types": "npm:^8.31.0"
     "@typescript-eslint/utils": "npm:^8.31.0"
     natural-orderby: "npm:^5.0.0"
   peerDependencies:
     eslint: ">=8.45.0"
-  checksum: 10c0/a89616bf6a69cb7817f32ac11d3e181c2a5e596507db7f4d27496c3d850cc53811293b4116eed3c86baf397866937ec8c67a57d8f61eb7903ede5b35b1a8ccf5
+  checksum: 10c0/c0fa2e79e575a8e2a1574c5404412d5e6d58c0151b5844a1db390e113e314b02d7572338e00eab9eec5f496d0f3153f9f94727c30684f7343023e3bc13e0f85c
   languageName: node
   linkType: hard
 
