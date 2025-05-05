@@ -49,7 +49,7 @@
     "@cspell/dict-bash": "^4.2.0",
     "@cspell/dict-css": "^4.0.17",
     "@cspell/dict-en-common-misspellings": "^2.0.9",
-    "@cspell/dict-en-gb": "^4.1.54",
+    "@cspell/dict-en-gb": "^5.0.2",
     "@cspell/dict-en_us": "^4.3.30",
     "@cspell/dict-filetypes": "^3.0.10",
     "@cspell/dict-git": "^3.0.4",
