@@ -16,7 +16,9 @@ const importSourceTransformerPluginOptions = {
       {
         find: /(?:\.[cm]?[jt]s[x]?)?$/iu,
         replace: TARGET_EXTENSION,
-        resolveIndex: true,
+        resolveIndex: {
+          fallback: "index",
+        },
         test: /^[.\\/]+.*$/,
       },
     ],
