@@ -2435,15 +2435,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/core@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@eslint/core@npm:0.10.0"
-  dependencies:
-    "@types/json-schema": "npm:^7.0.15"
-  checksum: 10c0/074018075079b3ed1f14fab9d116f11a8824cdfae3e822badf7ad546962fafe717a31e61459bad8cc59cf7070dc413ea9064ddb75c114f05b05921029cde0a64
-  languageName: node
-  linkType: hard
-
 "@eslint/core@npm:^0.12.0":
   version: 0.12.0
   resolution: "@eslint/core@npm:0.12.0"
@@ -2499,17 +2490,17 @@ __metadata:
   linkType: hard
 
 "@eslint/markdown@npm:^6.2.2":
-  version: 6.4.0
-  resolution: "@eslint/markdown@npm:6.4.0"
+  version: 6.5.0
+  resolution: "@eslint/markdown@npm:6.5.0"
   dependencies:
-    "@eslint/core": "npm:^0.10.0"
-    "@eslint/plugin-kit": "npm:^0.2.5"
+    "@eslint/core": "npm:^0.14.0"
+    "@eslint/plugin-kit": "npm:^0.3.1"
     mdast-util-from-markdown: "npm:^2.0.2"
     mdast-util-frontmatter: "npm:^2.0.1"
     mdast-util-gfm: "npm:^3.0.0"
     micromark-extension-frontmatter: "npm:^2.0.0"
     micromark-extension-gfm: "npm:^3.0.0"
-  checksum: 10c0/783907fa51e8102d659a5d339600c85ee8f0606db2795f0fa855102149d45906c73e32d1bf4d670cae7aaab250c414dad5f6dcbc41f1e234ffa5877cc069d2b8
+  checksum: 10c0/96ff37cf42dccc952ebf52e18e36129ddf4b9bce045af5ddde7eaab0c5d3e41b2fe9ff482bb3bd4f9341409b97593a6f0ba26fc42eb323e76723770ff9ffdeb7
   languageName: node
   linkType: hard
 
@@ -2517,16 +2508,6 @@ __metadata:
   version: 2.1.6
   resolution: "@eslint/object-schema@npm:2.1.6"
   checksum: 10c0/b8cdb7edea5bc5f6a96173f8d768d3554a628327af536da2fc6967a93b040f2557114d98dbcdbf389d5a7b290985ad6a9ce5babc547f36fc1fde42e674d11a56
-  languageName: node
-  linkType: hard
-
-"@eslint/plugin-kit@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@eslint/plugin-kit@npm:0.2.5"
-  dependencies:
-    "@eslint/core": "npm:^0.10.0"
-    levn: "npm:^0.4.1"
-  checksum: 10c0/ba9832b8409af618cf61791805fe201dd62f3c82c783adfcec0f5cd391e68b40beaecb47b9a3209e926dbcab65135f410cae405b69a559197795793399f61176
   languageName: node
   linkType: hard
 
