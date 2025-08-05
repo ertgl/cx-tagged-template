@@ -64,7 +64,7 @@ await describe(
                 strictEqual(
                   fragment.type,
                   data.expected.fragmentTypes[index],
-                  `Expected fragment type to be ${String(data.expected.fragmentTypes[index])}, but got ${String(fragment.type)}.`,
+                  `Expected fragment type to be ${data.expected.fragmentTypes[index]}, but got ${fragment.type}.`,
                 );
               }
             },
