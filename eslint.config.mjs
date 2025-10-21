@@ -74,10 +74,11 @@ const PATTERN_MD = "**/*.md";
 const PATTERN_YAML_YML = "**/*.{yaml,yml}";
 
 /**
- * @type {Linter.Config["languageOptions"]}
+ * @satisfies {Linter.Config["languageOptions"]}
  */
 const eslintBaseLanguageOptions = {
   parserOptions: {
+    ecmaFeatures: {},
     projectService: true,
     tsconfigRootDir: __dirname,
     warnOnUnsupportedTypeScriptVersion: false,
@@ -92,7 +93,6 @@ const stylisticBaseCustomizationOptions = {
   blockSpacing: true,
   braceStyle: "allman",
   commaDangle: "always-multiline",
-  flat: true,
   indent: 2,
   jsx: false,
   quoteProps: "consistent-as-needed",
@@ -221,7 +221,7 @@ export default defineConfig([
       parserOptions: {
         ...eslintBaseLanguageOptions.parserOptions,
         ecmaFeatures: {
-          ...eslintBaseLanguageOptions.parserOptions?.ecmaFeatures,
+          ...eslintBaseLanguageOptions.parserOptions.ecmaFeatures,
           jsx: true,
         },
       },
