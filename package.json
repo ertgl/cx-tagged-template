@@ -60,7 +60,7 @@
     "@cspell/dict-npm": "^5.2.32",
     "@cspell/dict-shell": "^1.1.2",
     "@cspell/dict-typescript": "^3.2.3",
-    "@cspell/eslint-plugin": "^9.6.4",
+    "@cspell/eslint-plugin": "^10.0.0",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.0.0",
     "@eslint/markdown": "^8.0.0",
