@@ -3886,8 +3886,8 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-yml@npm:^3.0.0":
-  version: 3.4.0
-  resolution: "eslint-plugin-yml@npm:3.4.0"
+  version: 3.5.0
+  resolution: "eslint-plugin-yml@npm:3.5.0"
   dependencies:
     "@eslint/core": "npm:^1.0.1"
     "@eslint/plugin-kit": "npm:^0.7.0"
@@ -3898,7 +3898,7 @@ __metadata:
     yaml-eslint-parser: "npm:^2.0.0"
   peerDependencies:
     eslint: ">=9.38.0"
-  checksum: 10c0/62a558e9f544cb698b4d44c221bf1a5993a703e17f7ebbb04c5c5dbdde5f9bcd8a584945b6a0d823c2bb0118e90fe12858479385447a5dffdde72bfc79a1cd9e
+  checksum: 10c0/b9345ce6ebe7295dccf55ecabaf33461a814b3f3eee7b7c6566fc713df2dae88d720a09df25d6bb0037a14f30fc0e143a0b4aeb05c445dc3340159aa405ff94d
   languageName: node
   linkType: hard
 
