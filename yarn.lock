@@ -2295,23 +2295,23 @@ __metadata:
   linkType: hard
 
 "@eslint/json@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@eslint/json@npm:2.0.0"
+  version: 2.0.1
+  resolution: "@eslint/json@npm:2.0.1"
   dependencies:
     "@eslint/core": "npm:^1.2.1"
-    "@eslint/plugin-kit": "npm:^0.7.1"
+    "@eslint/plugin-kit": "npm:^0.7.2"
     "@humanwhocodes/momoa": "npm:^3.3.10"
     natural-compare: "npm:^1.4.0"
-  checksum: 10c0/b4b6dcc06dcc981cbc0e582d6126890f238d115ba876f5dccf95e907cafc8c4952d20ea236249d831e79f94d208602253a131cfeabd5d30e0181581fa4fc643e
+  checksum: 10c0/7dcf19d9dad8e74081a56987bde94579042811217d659fc5e13e87a67cdfd9a6c70e127dc797ddd925807d8e5377e97ce0f250639e29fbd4d427c6e8e5160044
   languageName: node
   linkType: hard
 
 "@eslint/markdown@npm:^8.0.0":
-  version: 8.0.2
-  resolution: "@eslint/markdown@npm:8.0.2"
+  version: 8.0.3
+  resolution: "@eslint/markdown@npm:8.0.3"
   dependencies:
     "@eslint/core": "npm:^1.2.1"
-    "@eslint/plugin-kit": "npm:^0.7.1"
+    "@eslint/plugin-kit": "npm:^0.7.2"
     github-slugger: "npm:^2.0.0"
     mdast-util-from-markdown: "npm:^2.0.2"
     mdast-util-frontmatter: "npm:^2.0.1"
@@ -2321,7 +2321,7 @@ __metadata:
     micromark-extension-gfm: "npm:^3.0.0"
     micromark-extension-math: "npm:^3.1.0"
     micromark-util-normalize-identifier: "npm:^2.0.1"
-  checksum: 10c0/3893ede905f6bcd954173b4c432c402c94a9eacbe539e99e4b365d3fa9275e7c175531781cbd637654acdf6f1f84faf74894674fee51d8354af7a0cf353e3fa4
+  checksum: 10c0/00f65a81786c5d286bf029a5eeb69a04bdd4993e363cd1a77b86100532440e47d46ae7757995515862513af3368a263f739fe5af170a5092af6bd8ef25cc980d
   languageName: node
   linkType: hard
 
@@ -2332,7 +2332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/plugin-kit@npm:^0.7.0, @eslint/plugin-kit@npm:^0.7.1":
+"@eslint/plugin-kit@npm:^0.7.0":
   version: 0.7.1
   resolution: "@eslint/plugin-kit@npm:0.7.1"
   dependencies:
