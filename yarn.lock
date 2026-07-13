@@ -1839,9 +1839,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-common-misspellings@npm:^2.1.12":
-  version: 2.1.12
-  resolution: "@cspell/dict-en-common-misspellings@npm:2.1.12"
-  checksum: 10c0/5b7acd175ba76f164dcb5f5b7e910511dbd005bbab77fb5ae082603b01112d352af84bcd8d3ddef020db187b51056c4ce6a02dab8aebfcf0aa0dc416a66729a5
+  version: 2.1.13
+  resolution: "@cspell/dict-en-common-misspellings@npm:2.1.13"
+  checksum: 10c0/b2f63caeb8d4afceb31d363c92b91ebbc86ebb266b542da2d7e1f46bbd38fd90746763e45888a9a836d2d4d518d94487348b6f270ff42fe91a7de2ba165be9b0
   languageName: node
   linkType: hard
 
@@ -1853,16 +1853,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.22":
-  version: 5.0.29
-  resolution: "@cspell/dict-en-gb@npm:5.0.29"
-  checksum: 10c0/f97e76801a1f56a6c538e7f9409930e094d5bf240d74c1113d006b20dff9eeb69187e0cf76780439b4c993f7b987de6a36ba22a5cf5edbda7b70e5c3e9c268c4
+  version: 5.0.30
+  resolution: "@cspell/dict-en-gb@npm:5.0.30"
+  checksum: 10c0/2dc785e1611934b0e2178b02d3a6ad19d5d2795881e1a7d025a7111f10a733db8b792bd84b19598e9c3e4c34f9408822af754ea87025452f66baac2fed5b1360
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.4.28, @cspell/dict-en_us@npm:^4.4.33":
-  version: 4.4.35
-  resolution: "@cspell/dict-en_us@npm:4.4.35"
-  checksum: 10c0/655debb38d2960cff7c729fb2985c97ba832715913ef48e8ead59f6d67220fc032f1adaef45e93b4d14590e1fda73f5a08f76296e6f8f0503638c4b18ee4d356
+  version: 4.4.36
+  resolution: "@cspell/dict-en_us@npm:4.4.36"
+  checksum: 10c0/7e1e6d4208584a8297864d267d4038ca3583d6b4ff6791ac7da3b945a5332f4368c3aec52217e8f25a29723233fce79eca7b5a4cf6f8dce52665b96d8da98bd3
   languageName: node
   linkType: hard
 
@@ -2033,9 +2033,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.32, @cspell/dict-npm@npm:^5.2.38":
-  version: 5.2.41
-  resolution: "@cspell/dict-npm@npm:5.2.41"
-  checksum: 10c0/997b4f4ae46f1e9f212da4772f32de5f3595600e53c12315916a2e1fcc6cb92cc8059c862da3cd48b27a39bffc381482c1ead5eccf009eb5e66f9c9cce263641
+  version: 5.2.43
+  resolution: "@cspell/dict-npm@npm:5.2.43"
+  checksum: 10c0/f3bbee21cfc03100f93319edf1722d249c45a8116a0469d5a5ec8c3de3b5fd96fd08171cc8d1c25640b3caeb9981833a08e67b32b3a6a1e1bface2f5904bc23b
   languageName: node
   linkType: hard
 
@@ -3627,8 +3627,8 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^10.0.0":
-  version: 10.6.0
-  resolution: "eslint@npm:10.6.0"
+  version: 10.7.0
+  resolution: "eslint@npm:10.7.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -3667,7 +3667,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/ebe0261fc750afb7f1a0c5a14f5288e57b971e0bee9754b1620132d22ad0c23690183977b0c9514ffa7ad460768d689d3fb9792ad9267b6c6205e2e0c17d8563
+  checksum: 10c0/d9415f506730c098ab8897da39f5719cdf9d1026c9511c322d4a272677f904b7d43ff423d63ee941c9a03d74d1a75563ce2668886734b1f293b22e57911a6dd6
   languageName: node
   linkType: hard
 
