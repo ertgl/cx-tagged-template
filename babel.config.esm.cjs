@@ -1,5 +1,5 @@
 /**
- * @import { type TransformOptions } from "@babel/core";
+ * @import { type InputOptions } from "@babel/core";
  *
  * @import {
  *   type Options as ImportSourceTransformerPluginOptions,
@@ -27,7 +27,7 @@ const importSourceTransformerPluginOptions = {
 };
 
 /**
- * @type {TransformOptions}
+ * @type {InputOptions}
  */
 module.exports = {
   plugins: [
