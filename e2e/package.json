@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "cx-tagged-template": "*",
-    "rimraf": "^6.1.2"
+    "rimraf": "^6.1.3"
   },
   "resolutions": {
     "cx-tagged-template": "portal:..",

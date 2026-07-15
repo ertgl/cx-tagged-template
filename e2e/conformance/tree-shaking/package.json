@@ -6,8 +6,8 @@
     "test": "node --test --test-reporter=spec ./test/*.{spec,test}.{cjs,js,mjs}"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^5.3.16",
-    "webpack": "^5.105.0"
+    "terser-webpack-plugin": "^5.6.1",
+    "webpack": "^5.108.4"
   },
   "exports": {
     "./package.json": "./package.json"
